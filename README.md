@@ -51,36 +51,82 @@ interpretability for financial forecasting.
 ---
 
 ## Paper Reference (Inspiration)
-👉 **[Paper Title xxxxxxxxxx
-  – Author Names xxxxxxxxxx
+👉 **[Paper Title Stock Market Prediction Using Sequential
+Log-Power Normalization and Ridge Regression
+  – Author Names K. S. Sekhar, 
+  C. T. Malyadri,
+  C. Rohith, 
+  M. Venu, 
+  C. Chandu, 
+  D. Siri, and 
+  S. Moturi.
  ](Paper URL here)**
 Original conference/IEEE paper used as inspiration for the model.
 
 ---
 
 ## Our Improvement Over Existing Paper
-xxxxxxxxxx
+Compared to the referenced paper, our work introduces practical, implementation-level improvements while preserving the original modeling philosophy. We design a fully reproducible end-to-end pipeline that strictly separates training, validation, and inference to prevent data leakage. All preprocessing steps, including logarithmic shifting, Yeo–Johnson transformation, and standard scaling, are saved and reused during prediction, improving deployment reliability. The model supports dynamic column alignment and missing-feature handling, enabling robust use across heterogeneous datasets. Additionally, performance evaluation is standardized with consistent metrics and automated reporting. These enhancements transform the original experimental framework into a deployment-ready, transparent, and reusable stock prediction system for real applications.
 
 ---
 
 ## About the Project
 Give a simple explanation of:
 - What your project does
+- This project predicts future stock closing prices using historical stock market data. It applies advanced data preprocessing techniques to stabilize price fluctuations and then uses a Ridge Regression model to generate accurate and reliable stock price predictions.
 - Why it is useful
+- Stock market data is noisy and highly volatile, which often reduces prediction accuracy. By stabilizing variance and reducing skewness before modeling, this project improves prediction accuracy while keeping the model simple, fast, and interpretable. This makes it suitable for academic use as well as real-world financial analysis and decision support.
 - General project workflow (input → processing → model → output)
+- Stock data (Open, High, Low, Close, Volume) is taken as input → data is preprocessed using logarithmic and Yeo–Johnson transformations with scaling → Ridge Regression model is trained → predicted stock prices are generated and compared with actual values.
 
 ---
 
 ## Dataset Used
-👉 **[Dataset Name](Dataset URL)**
+👉 **[Google Stock Price Datase](https://www.kaggle.com/datasets/medharawat/google-stock-price)**
 
 **Dataset Details:**
-xxxxxxxxxx
+Dataset Name: Google (Alphabet Inc.) Historical Stock Price Dataset
+
+Company Ticker: GOOGL / GOOG
+
+Data Type: Financial time-series data
+
+Frequency: Daily records
+
+Time Period: Historical data covering multiple years (from initial public listing to recent dates, depending on source)
 
 ---
 
 ## Dependencies Used
-xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx ...
+pandas
+Used for reading CSV stock datasets, handling tabular data, column selection, and data preprocessing operations.
+
+numpy
+Used for numerical computations, logarithmic transformations (log1p), array operations, and mathematical processing of stock values.
+
+scikit-learn (sklearn)
+
+train_test_split – for splitting the dataset into training and testing sets
+
+StandardScaler – for feature standardization (zero mean, unit variance)
+
+PowerTransformer (Yeo–Johnson) – for variance stabilization and distribution normalization
+
+Ridge – for Ridge Regression modeling with L2 regularization
+
+mean_squared_error, mean_absolute_error, r2_score – for model performance evaluation
+
+matplotlib
+Used for plotting and visualizing actual vs predicted stock prices and performance graphs.
+
+seaborn
+Used for statistical visualization and exploratory data analysis (EDA) support.
+
+joblib
+Used to save and load the trained Ridge Regression model and preprocessing transformers for deployment and inference.
+
+google.colab
+Used for Google Drive integration, dataset access, and file upload functionality in the Colab execution environment.
 
 ---
 
