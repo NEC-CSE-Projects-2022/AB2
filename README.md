@@ -51,7 +51,7 @@ interpretability for financial forecasting.
 ---
 
 ## Paper Reference (Inspiration)
-👉 **[Paper Title Stock Market Prediction Using Sequential
+👉 **[Paper Title- Stock Market Prediction Using Sequential
 Log-Power Normalization and Ridge Regression
   – Author Names K. S. Sekhar, 
   C. T. Malyadri,
