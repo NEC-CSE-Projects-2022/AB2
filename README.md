@@ -131,31 +131,75 @@ Used for Google Drive integration, dataset access, and file upload functionality
 ---
 
 ## EDA & Preprocessing
-xxxxxxxxxx
+Checked for missing values and handled them using median imputation
+Visualized stock price distributions and trends
+Identified skewness and heteroscedasticity in raw data
+Preprocessing Steps:
+Log Transformation → reduces skewness and compresses large values
+Yeo–Johnson Transformation → stabilizes variance
+StandardScaler → normalizes features
+Data Cleaning → ensures consistent and usable dataset
 
 ---
 
 ## Model Training Info
-xxxxxxxxxx
+Model Used: Ridge Regression
+Regularization Parameter (α): 0.1
+Train/Test Split: 80% / 20%
+Training Process:
+Load dataset
+Apply preprocessing pipeline
+Split dataset into training and testing sets
+Train Ridge Regression model
+Save trained model using joblib
 
 ---
 
 ## Model Testing / Evaluation
-xxxxxxxxxx
+Evaluation Metrics:
+Mean Squared Error (MSE)
+Mean Absolute Error (MAE)
+R² Score
+Performance:
+MSE ≈ 0.00003
+MAE ≈ 0.003 – 0.005
+R² ≈ 0.98
+
+The model shows high accuracy with very low prediction error and stable outputs.
 
 ---
 
 ## Results
-xxxxxxxxxx
+Ridge Regression outperformed:
+Linear Regression
+Support Vector Regression (SVR)
+Neural Networks
+Predictions closely match actual stock prices
+Significant reduction in variance and noise
 
 ---
 
 ## Limitations & Future Work
-xxxxxxxxxx
+Limitations:
+Uses only OHLCV features
+Does not consider external factors (news, sentiment, macroeconomics)
+Future Work:
+Add technical indicators (RSI, Moving Averages)
+Integrate sentiment analysis
+Develop hybrid models (Ridge + LSTM)
+Build real-time prediction system
 
 ---
 
 ## Deployment Info
-xxxxxxxxxx
+The trained model is saved using joblib and can be deployed using:
+
+Flask API
+FastAPI
+Streamlit Dashboard
+Deployment Steps:
+Load saved model
+Apply same preprocessing pipeline
+Predict on new stock data
 
 ---
