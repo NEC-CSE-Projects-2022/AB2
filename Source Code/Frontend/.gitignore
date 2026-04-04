@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Flask
+instance/
+.webassets-cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model files (optional - uncomment if you don't want to push large model files)
+# *.pkl
+
+# CSV data files (optional - uncomment if you don't want to push large datasets)
+# *.csv
+
+# Logs
+*.log
